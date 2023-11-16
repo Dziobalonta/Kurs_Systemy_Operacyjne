@@ -1,0 +1,45 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Krakow, 16.03.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 1 program w jezyku C++:
+--------------------------------------------------------------------
+
+	
+I.  Jak w 1.b), tylko, że komunikaty procesów potomnych były wypisywane 
+przez program uruchamiany przez funkcję execlp. Nazwę programu do 
+uruchomienia przekazywać przez argumenty programu procesu macierzystego.
+    1) exec.cpp			- program główny
+	2) potomny.cpp		- program wywoływany przez execlp()
+	3) pytanie.txt      - plik tekstowy	
+	
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run
+
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run
+	   
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+

@@ -1,0 +1,3 @@
+Powstanie 2^n-1 procesów. Dlatego ponieważ każdy kolejny program dzieli się na dwa.
+Przy n-krotnym wywołaniu funkcji fork() otrzymamy 2 * 2 * 2 * ... * 2-nkrotnego czyli 2^n.
+Jeden z tych programów wywołaliśmy my, więc powstanie 2^n-1 procesów.

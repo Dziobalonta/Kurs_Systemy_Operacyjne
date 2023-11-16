@@ -1,0 +1,65 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Kraków, 28.04.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 2 programy w jezyku C++:
+--------------------------------------------------------------------
+
+I.  Implementacja problemu "Producenta i konsumenta" przy użyciu potoków
+    FIFO. Proces główny tworzy potok oraz za pomocą funkcji fork() 
+    uruchamia dwa procesy, producenta i konsumenta. Producent czyta 
+    dane z pliku i umieszcza je w potoku, następnie konsument, odczytuje 
+    dane z potoku i zapisuje je w pliku docelowym. Na końcu główny proces
+    usuwa potok.
+    1) FifoPipe.cpp        - program główny
+    2) FifoProd.cpp        - program producenta
+    3) FifoKons.cpp        - program konsumenta 
+    4) source.txt          - plik z którego program czyta
+    5) destination.txt     - plik do którego program zapisuje
+
+II. Implementacja problemu "Producenta i konsumenta" przy użyciu potoków
+    FIFO. Potok tworzony jest z poziomu powłoki, również jak dwa procesy,
+    producenta i konsumenta(uruchamiane w osobnych terminalach). Producent
+    czyta dane z pliku i umieszcza je w potoku, następnie konsument,
+    odczytuje dane z potoku i zapisuje je w pliku docelowym. Na końcu 
+    potok jest usuwany z poziomu powłoki.
+    1) FifoProd.cpp        - program producenta
+    2) FifoKons.cpp        - program konsumenta 
+    3) source.txt          - plik z którego program czyta
+    4) destination.txt     - plik do którego program zapisuje
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+       make run1
+
+-> Aby uruchomic drugi program, nalezy wykonac komende:
+       make run2
+
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run1
+	   
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run2
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+

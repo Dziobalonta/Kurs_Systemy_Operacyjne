@@ -1,0 +1,5 @@
+Przy wywołaniu funkcji fork-exec n-razy powstanie n-programów, będzie ich tyle ile 
+razy wykonuje się pętla czyli 3. Dzieje się tak ponieważ funkcja execlp "zastępuje"
+powstałe procesy z kodem głównego pliku, kodem z pliku wywołanego przez nią. Czyli,
+inne potencjalne procesy które mogły powstać zostały zastąpione kodem w którym
+nie jest wywołany fork.

@@ -1,0 +1,55 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Kraków, 04.06.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 1 program w jezyku C++:
+--------------------------------------------------------------------
+
+I.  Implementacja problemu "Producenta i konsumenta" przy użyciu semaforów
+    nazwanych oraz pamięci dzielonej. Producent czyta dane z pliku 
+    i umieszcza je w pamieci dzielonej, następnie konsument, odczytuje
+    dane z współdzielonego fragmentu i zapisuje je w pliku docelowym.
+    
+    Program zawiera bibliotekę z funkcjami do obsługi semaforów oraz
+    pamieci dzielonej. Każda funkcja zawiera w sobie obsługe błędów.
+
+    1) main.cpp            - program główny
+    2) producent.cpp       - program producenta
+    3) konsument.cpp       - program konsumenta
+    4) pamiec_dzielona.cpp - plik z funkcjami pamięci dzielonej
+    5) pamiec_dzielona.h   - plik nagłówkowy pamięci dzielonej
+    6) semafor.cpp         - plik z funkcjami semaforów
+    7) semafor.h           - plik nagłówkowy semaforów
+    8) wejscie.txt         - plik z którego program czyta
+    9) wyjscie.txt         - plik do którego program zapisuje
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomić program z biblioteką statyczną, należy wykonać komendę:
+       run_statyczna
+
+-> Aby uruchomić program z biblioteką dzieloną - 1 sposób, należy wykonać komendę:
+       run_dzielona1
+
+-> Aby uruchomić program z biblioteką dzieloną - 2 sposób, należy wykonać komendę:
+       run_dzielona2
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+

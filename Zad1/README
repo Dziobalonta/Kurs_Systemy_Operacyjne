@@ -1,0 +1,93 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Krakow, 15.03.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 5 programów w jezyku C++:
+--------------------------------------------------------------------
+
+I.  Program wypisujący identyfikatory UID, GID, PID, PPID i PGID dla
+	danego procesu 
+    1) wypisz_id.cpp  - program główny 
+
+II. Program wywołujący funkcję fork trzy razy w pętli, wypisuje on
+	powyższe identyfikatory dla procesu macierzystego oraz wszystkich 
+	procesów potomnych. Przy pomocy funkcji wait sprawia, że proces 
+	macierzysty czeka na zakończenie wszystkich procesó	w potomnych.    
+    1) fork.cpp               - program główny
+	
+III.Program jak w II., tylko zamiast funkcji wait używa funkcji sleep, sprawiący
+	że procesy potomne są adoptowane przez proces init. Wywołując polecenie
+	pstree -p lub htop w terminalu można zidentyfikować proces adoptujący 
+	osierocone procesy.   
+    1) sleep.cpp              - program główny
+  
+IV. Jak w II., tylko procesy są grupowane pokoleniami od najstarszego do
+	najmłodszego, a proces macierzysty kończy się, dopiero po procesach potomnych
+	Program używa funkcji sleep zamiast wait. W katalogu znajduje sie plik .txt
+	z przykładowym ,,drzewem genealogicznym” tworzonym procesów
+	z zaznaczonymi identyfikatorami PID, PPID i PGID.   
+    1) pokolenia.cpp          - program główny
+	2) drzewo.txt          	  - plik tekstowy
+	
+V.  Jak w II., tylko każdy proces potomny jest liderem swojej własnej grupy procesów.
+	W folderze znajduje się również plik tekstowy z odpowiedzią do zadanego pytania.
+    1) zmiana_grupy.cpp       - program główny
+	2) pytanie.txt            - plik tekstowy	
+	
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run1
+
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run2
+	   
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run3
+	   
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run4
+	   
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run5
+
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run1
+	   
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run2
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run3
+
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run4
+	   
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run5
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+

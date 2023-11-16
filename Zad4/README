@@ -1,0 +1,43 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Kraków, 28.04.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 1 program w jezyku C++:
+--------------------------------------------------------------------
+
+I.  Implementacja problemu "Producenta i konsumenta" przy użyciu potoków
+    nienazwanych. Producent czyta dane z pliku i umieszcza je w potoku,
+    następnie konsument, utworzony przy pomocy funkcji fork(), odczytuje
+    dane z potoku i zapisuje je w pliku docelowym.
+    1) pipe.cpp            - program główny 
+    2) source.txt          - plik z którego program czyta
+    3) destination.txt     - plik do którego program zapisuje
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+       make run
+
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run
+	   
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+

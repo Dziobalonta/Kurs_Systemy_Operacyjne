@@ -1,0 +1,67 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Kraków, 21.05.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 2 programy w jezyku C++:
+--------------------------------------------------------------------
+
+I.  Implementacja zadania wzajemnego wykluczania przy użyciu semaforów
+    nazwanych. Proces główny tworzy semafor oraz za pomocą funkcji fork() 
+    uruchamia procesy które w synchronizacji inkrementują numer w pliku 
+    tekstowym. Wykonują to w tzw. sekcji krytycznej. Ilość procesów do
+    uruchomienia oraz wartość startową semafora podajemy przez agrumenty
+    wywolania programu.
+    
+    1) powielacz.cpp        - program główny
+    2) krytyczna.cpp        - program sekcji krytycznej
+    3) numer.txt            - plik z liczbą która jest inkrementowana
+
+II. Implementacja zadania wzajemnego wykluczania przy użyciu semaforów
+    nazwanych. Proces główny tworzy semafor oraz za pomocą funkcji fork() 
+    uruchamia procesy które w synchronizacji inkrementują numer w pliku 
+    tekstowym. Wykonują to w tzw. sekcji krytycznej. Ilość procesów do
+    uruchomienia oraz wartość startową semafora podajemy przez agrumenty
+    wywolania programu. Programy korzystają z własnoręcznie napisanej 
+    biblioteki funkcji do obsługi semaforów, z dołączoną ubsługą błędów.
+
+    1) powielacz_2.cpp             - program główny
+    2) krytyczna_2.cpp             - program sekcji krytycznej
+    3) numer.txt                   - plik z liczbą która jest inkrementowana
+    4) semafor.cpp                 - plik z funkcjami biblioteki
+    4) ./include/semafor.h         - plik nagłówkowy biblioteki
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+       make run1
+
+-> Aby uruchomic drugi program, nalezy wykonac komende:
+       make run2
+
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run1
+	   
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run2
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+

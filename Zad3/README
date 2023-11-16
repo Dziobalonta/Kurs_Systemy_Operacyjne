@@ -1,0 +1,67 @@
+========================================================================
+Autor: Tomasz Dziób,                                  Krakow, 03.03.2023
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 5 programów w jezyku C++:
+--------------------------------------------------------------------
+
+I.  Program obsługujący sygnały: wykonujący operację domyślną, ignorujący go
+       oraz przychwytujący go i wykonujący obsługę ustaloną przez użytkownika.
+       Do programu wysyła się sygnały poprzez klawiaturę.
+    1) a_sygnal.cpp            - program główny 
+
+II. Program wywołujący funkcję fork w procesie macierzystym oraz execlp w procesie
+       potomnym. Parent wysyła sygnały do childa przy pomocy funkcji kill. Przed wysłaniem
+       sygnałów parent sprawdza czy proces potomny wogóle istnieje. 
+    1) b_fork_parent.cpp       - program główny
+    2) b_execlp_child.cpp      - program potomny
+	
+III.Program jak w II., tylko potomny proces przed wykonaniem funkcji execlp staje się liderem
+       własnej grupy procesów. Parent wysyła sygnały do całej grupy childa. Lider, potomek
+       ignoruje je oraz wywołuje kolejny raz funkcją execlp program z podpunktu a). Do niego
+       również docierają sygnały od parenta.
+    1) c_macierzysty.cpp          - program główny
+    2) c_potomny.cpp              - program potomny
+    3) c_sygnal2.cpp              - lekko zmodyfikowany program z I.
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby uruchomic pierwszy program, nalezy wykonac komende:
+       make run1
+
+-> Aby uruchomic drugi program, nalezy wykonac komende:
+       make run2
+	   
+-> Aby uruchomic trzeci program, nalezy wykonac komende:
+       make run3
+	   
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run1
+	   
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run2
+---> Dla pewnosci, ze wykonywane sa polecenia zdefiniowane w Makefile,
+     a nie wbudowane polecenia make'a, uzyc opcji -r, tzn.
+       make -r run3
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================
+
+
+
